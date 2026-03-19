@@ -1,6 +1,5 @@
 package com.novaechiro.chatgamerecoded;
 
-import java.util.Iterator;
 import java.util.logging.Level;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -8,7 +7,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class Utils {
-   private static final int CENTER_PX = 154;
 
    public static void sendMessage(Player p, String msg) {
       p.sendMessage(ChatColor.translateAlternateColorCodes('&', msg));
