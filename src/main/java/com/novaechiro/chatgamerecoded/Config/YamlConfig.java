@@ -24,7 +24,7 @@ public class YamlConfig extends YamlConfiguration {
       try {
          super.load(this.file);
          return true;
-      } catch (InvalidConfigurationException | IOException var2) {
+      } catch (InvalidConfigurationException | IOException exception) {
          this.plugin.getLogger().log(Level.SEVERE, "Failed to load configuration file {0}!", this.path);
          return false;
       }
@@ -34,7 +34,7 @@ public class YamlConfig extends YamlConfiguration {
       try {
          super.save(this.file);
          return true;
-      } catch (IOException var2) {
+      } catch (IOException exception) {
          this.plugin.getLogger().log(Level.SEVERE, "Failed to save configuration file {0}!", this.path);
          return false;
       }
@@ -49,7 +49,7 @@ public class YamlConfig extends YamlConfiguration {
                this.file.createNewFile();
             }
          }
-      } catch (IOException var2) {
+      } catch (IOException exception) {
          this.plugin.getLogger().log(Level.SEVERE, "Failed to create configuration file {0}!", this.path);
       }
 

@@ -26,7 +26,6 @@ public class ChatManager implements Listener {
          if (this.plugin.gameManager.worldEnabled(player) && this.plugin.gameManager.gamesIsToggled(player) && this.plugin.textEqualsWord(game, message, this.plugin.selected)) {
             event.setCancelled(true);
             this.plugin.gameManager.stopTimer();
-            YamlConfig rewardConfig = this.plugin.configManager.rewards;
             YamlConfig messages = this.plugin.configManager.messages;
             Runnable runnable = new Runnable() {
                private List<String> rewards;
@@ -45,9 +44,11 @@ public class ChatManager implements Listener {
             this.plugin.gameManager.updateTop(player.getName(), this.plugin.gameManager.getPoints(player), newPoints);
             this.plugin.gameManager.setPoints(player, newPoints);
 
+            String correctAnswer = "trivia".equalsIgnoreCase(game) ? message : this.plugin.selected;
+
             for (Player p : Bukkit.getOnlinePlayers()) {
                if (this.plugin.gameManager.worldEnabled(p)) {
-                  this.plugin.gameManager.sendWinnerMessage(p, messages.getStringList(game + ".correct_message"), "%player%", player.getName(), "%display_name%", player.getDisplayName(), "%correct_answer%", this.plugin.selected, "%time%", "" + this.plugin.gameManager.getElapsedTime(), "%equation%", this.plugin.equation);
+                  this.plugin.gameManager.sendWinnerMessage(p, messages.getStringList(game + ".correct_message"), "%player%", player.getName(), "%display_name%", player.getDisplayName(), "%correct_answer%", correctAnswer, "%time%", "" + this.plugin.gameManager.getElapsedTime(), "%equation%", this.plugin.equation);
                }
             }
 
