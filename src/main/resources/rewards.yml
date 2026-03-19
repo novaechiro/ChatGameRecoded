@@ -13,6 +13,15 @@
 #
 #COMMANDS WITHOUT ANY % WILL BE REWARDS GIVEN 100%.
 
+#INDEPENDENT OPTION:
+#If you want each reward to have its own chance instead of being calculated together, add "option: independent" under the reward and it will make it so each command has its own chance instead of being calculated together. Example:
+#reward_1:
+#  option: independent
+#  data:
+#    - '50.0%~ [consolecmd] give %player% diamond 3'
+#    - '50.0%~ [consolecmd] give %player% dirt  3'
+#This will make it so each command has a 50% chance to be given
+
 #PERMISSION CHECKING:
 #
 #PUT AT THE END OF COMMAND LINE.

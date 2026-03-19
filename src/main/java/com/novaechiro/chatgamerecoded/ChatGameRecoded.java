@@ -142,7 +142,7 @@ public class ChatGameRecoded extends JavaPlugin implements Listener {
                 this.points.put(path, this.configManager.pointsdata.getInt("Points." + path + ".amount"));
             });
             this.getLogger().info("Points loaded successfully!");
-        } catch (NullPointerException var2) {
+        } catch (NullPointerException ex) {
             this.getLogger().info("No points info was found! If this is your first time enabling the plugin, it is normal.");
         }
 
@@ -201,14 +201,11 @@ public class ChatGameRecoded extends JavaPlugin implements Listener {
             for(Matcher matcher = pattern.matcher(message); matcher.find(); matcher = pattern.matcher(message)) {
                 String hexCode = message.substring(matcher.start(), matcher.end());
                 String replaceSharp = hexCode.replace('#', 'x');
-                char[] ch = replaceSharp.toCharArray();
-                StringBuilder builder = new StringBuilder("");
-                char[] var9 = ch;
-                int var10 = ch.length;
+                char[] chars = replaceSharp.toCharArray();
+                StringBuilder builder = new StringBuilder();
 
-                for(int var11 = 0; var11 < var10; ++var11) {
-                    char c = var9[var11];
-                    builder.append("&" + c);
+                for(char c : chars) {
+                    builder.append('&').append(c);
                 }
 
                 message = message.replace(hexCode, builder.toString());

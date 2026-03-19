@@ -1,7 +1,6 @@
 package com.novaechiro.chatgamerecoded.Manager;
 
 import com.novaechiro.chatgamerecoded.ChatGameRecoded;
-import java.util.Iterator;
 import java.util.concurrent.ThreadLocalRandom;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -49,16 +48,10 @@ public class TaskManager {
 
          public boolean checkPlayersOnline() {
             int vanished = 0;
-            Iterator var2 = Bukkit.getOnlinePlayers().iterator();
-
-            while(var2.hasNext()) {
-               Player player = (Player)var2.next();
-               Iterator var4 = player.getMetadata("vanished").iterator();
-
-               while(var4.hasNext()) {
-                  MetadataValue meta = (MetadataValue)var4.next();
+            for (Player player : Bukkit.getOnlinePlayers()) {
+               for (MetadataValue meta : player.getMetadata("vanished")) {
                   if (meta.asBoolean()) {
-                     ++vanished;
+                     vanished++;
                   }
                }
             }

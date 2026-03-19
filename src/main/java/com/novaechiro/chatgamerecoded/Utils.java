@@ -31,12 +31,12 @@ public class Utils {
       int messagePxSize = 0;
       boolean previousCode = false;
       boolean isBold = false;
-      char[] var5 = message.toCharArray();
-      int toCompensate = var5.length;
+      char[] messageChars = message.toCharArray();
+      int toCompensate = messageChars.length;
 
       int spaceLength;
       for(spaceLength = 0; spaceLength < toCompensate; ++spaceLength) {
-         char c = var5[spaceLength];
+         char c = messageChars[spaceLength];
          if (c == 167) {
             previousCode = true;
          } else if (previousCode) {

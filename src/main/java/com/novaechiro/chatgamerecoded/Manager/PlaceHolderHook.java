@@ -35,7 +35,7 @@ public class PlaceHolderHook {
             try {
                top = Integer.parseInt(identifier.split("_")[1]);
                return this.plugin.gameManager.getSpecific(top);
-            } catch (NumberFormatException var4) {
+            } catch (NumberFormatException ex) {
                this.plugin.getLogger().severe("Error while trying to get a player in top 10 from placeholder.");
                return "";
             }
@@ -43,7 +43,7 @@ public class PlaceHolderHook {
             try {
                top = Integer.parseInt(identifier.split("_")[2]);
                return this.plugin.gameManager.getSpecificPoints(top);
-            } catch (NumberFormatException var5) {
+            } catch (NumberFormatException ex) {
                this.plugin.getLogger().severe("Error while trying to get a player's points in top 10 from placeholder.");
                return "";
             }

@@ -6,7 +6,6 @@ import com.novaechiro.chatgamerecoded.Utils;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 import java.util.Map.Entry;
@@ -90,7 +89,7 @@ public class GameManager {
          }
 
          this.sendConfigMessage(sender, messages.getString("top.footer"));
-      } catch (NullPointerException var6) {
+      } catch (NullPointerException ex) {
          sender.sendMessage(this.Color(messages.getString("top.no_data_message")));
       }
 

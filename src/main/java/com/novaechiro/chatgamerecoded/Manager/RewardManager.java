@@ -5,8 +5,8 @@ import com.novaechiro.chatgamerecoded.ChatGameRecoded;
 import com.novaechiro.chatgamerecoded.Config.YamlConfig;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.logging.Level;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.ConfigurationSection;
@@ -69,6 +69,8 @@ public class RewardManager extends RandomReward {
          for (String reward : chosenRewards) {
             ConfigurationSection rewardSection = rewardsSection.getConfigurationSection(reward);
             if (rewardSection == null) continue;
+            String option = rewardSection.getString("option", "exclusive");
+            boolean independent = option.equalsIgnoreCase("independent");
             List<String> rewardData = rewardSection.getStringList("data");
             for (String command : rewardData) {
                String permission;
@@ -86,10 +88,17 @@ public class RewardManager extends RandomReward {
                   commands.add(command);
                } else {
                   try {
-                     String[] split = command.split("%~ ");
+                     String[] split = command.split("%~ ", 2);
                      double parsedChance = Double.parseDouble(split[0]);
-                     this.add(parsedChance, split[1]);
-                  } catch (NumberFormatException var18) {
+                     String rewardCommand = split[1];
+                     if (independent) {
+                        if (ThreadLocalRandom.current().nextDouble(100.0D) < parsedChance) {
+                           commands.add(rewardCommand);
+                        }
+                     } else {
+                        this.add(parsedChance, rewardCommand);
+                     }
+                  } catch (NumberFormatException ex) {
                      this.plugin.getLogger().log(Level.SEVERE, "Error while trying to parse chance for game {0} in command line:", game.toUpperCase());
                      this.plugin.getLogger().log(Level.SEVERE, "- {0}", command);
                   }
