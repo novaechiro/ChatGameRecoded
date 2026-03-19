@@ -1,0 +1,10 @@
+name: ChatGames
+author: Nsider
+version: 1.2.1
+api-version: 1.13
+main: chatgames.ChatGames
+commands:
+    chatgames:
+        description: Starts an unscrable event
+        aliases: chatgame
+        usage: /<command>

@@ -1,0 +1,16 @@
+com\novaechiro\chatgamerecoded\Manager\ChatManager$1.class
+com\novaechiro\chatgamerecoded\Rewards\RandomReward.class
+com\novaechiro\chatgamerecoded\Manager\ChatManager.class
+com\novaechiro\chatgamerecoded\Config\YamlConfig.class
+com\novaechiro\chatgamerecoded\Manager\PlaceHolderHook.class
+com\novaechiro\chatgamerecoded\ChatGameRecoded.class
+com\novaechiro\chatgamerecoded\Manager\TaskManager$1.class
+com\novaechiro\chatgamerecoded\Utils$DefaultFontInfo.class
+com\novaechiro\chatgamerecoded\Manager\GameManager$Type.class
+com\novaechiro\chatgamerecoded\Config\ConfigManager.class
+com\novaechiro\chatgamerecoded\Manager\TaskManager.class
+com\novaechiro\chatgamerecoded\Manager\RewardManager.class
+com\novaechiro\chatgamerecoded\Manager\GameManager$GameType.class
+com\novaechiro\chatgamerecoded\Utils.class
+com\novaechiro\chatgamerecoded\Manager\GameManager.class
+com\novaechiro\chatgamerecoded\Comando.class
