@@ -130,7 +130,9 @@ trivia:
     
     data:
       1:
-        question: 'How many sides does a dice have? (number)'
+        question: 
+        - 'How many sides does a dice have? (number)'
+        - 'Properly not 4'
         answer: '6'
         # multiple accepted answers can be defined as an array:
         # answer:

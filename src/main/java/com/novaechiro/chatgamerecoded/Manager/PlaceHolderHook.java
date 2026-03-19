@@ -15,7 +15,7 @@ public class PlaceHolderHook {
    }
 
    public String getAuthor() {
-      return "Nsider";
+      return "Nsider, Novaechiro";
    }
 
    public String getIdentifier() {
@@ -23,7 +23,7 @@ public class PlaceHolderHook {
    }
 
    public String getVersion() {
-      return "1.0.0";
+      return "1.1.0";
    }
 
    public String onPlaceholderRequest(Player p, String identifier) {

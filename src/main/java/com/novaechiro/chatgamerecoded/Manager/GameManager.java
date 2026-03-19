@@ -605,7 +605,12 @@ public class GameManager {
          Random rand = new Random();
          int getran = rand.nextInt(this.plugin.trivias.size());
          String choice = this.plugin.trivias.get(getran);
-         String question = this.plugin.getConfig().getString("trivia.data." + choice + ".question");
+         String question;
+         if (this.plugin.getConfig().isList("trivia.data." + choice + ".question")) {
+            question = String.join("\n", this.plugin.getConfig().getStringList("trivia.data." + choice + ".question"));
+         } else {
+            question = this.plugin.getConfig().getString("trivia.data." + choice + ".question");
+         }
 
          this.plugin.triviaAnswers.clear();
          if (this.plugin.getConfig().isList("trivia.data." + choice + ".answer")) {
