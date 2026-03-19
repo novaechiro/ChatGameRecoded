@@ -1,10 +1,67 @@
-name: ChatGames
-author: Nsider
+name: ChatGamesRecoded
+author: Novaechiro
 version: 1.2.1
 api-version: 1.13
 main: com.novaechiro.chatgamerecoded.ChatGameRecoded
+
 commands:
-    chatgames:
-        description: Starts an unscrable event
-        aliases: chatgame
-        usage: /<command>
+  chatgames:
+    description: Manage chat games
+    usage: /chatgames
+    permission: chatgames.use
+    permission-message: '&cYou can''t use this command.'
+  chatgames unscramble:
+    description: Start a chat game
+    usage: /chatgames unscramble
+    permission: chatgames.start
+    permission-message: '&cNo permission for starting games.'
+  chatgames unreverse:
+    description: Start a chat game
+    usage: /chatgames unreverse
+    permission: chatgames.start
+    permission-message: '&cNo permission for starting games.'
+  chatgames reaction:
+    description: Start a chat game
+    usage: /chatgames reaction
+    permission: chatgames.start
+    permission-message: '&cNo permission for starting games.'
+  chatgames fillout:
+    description: Start a chat game
+    usage: /chatgames fillout
+    permission: chatgames.start
+    permission-message: '&cNo permission for starting games.'
+  chatgames random:
+    description: Start a chat game
+    usage: /chatgames random
+    permission: chatgames.start
+    permission-message: '&cNo permission for starting games.'
+  chatgames math:
+    description: Start a chat game
+    usage: /chatgames math
+    permission: chatgames.start
+    permission-message: '&cNo permission for starting games.'
+  chatgames variable:
+    description: Start a chat game
+    usage: /chatgames variable
+    permission: chatgames.start
+    permission-message: '&cNo permission for starting games.'
+  chatgames trivia:
+    description: Start a chat game
+    usage: /chatgames trivia
+    permission: chatgames.start
+    permission-message: '&cNo permission for starting games.'
+  chatgames reload:
+    description: Reload plugin config
+    usage: /chatgames reload
+    permission: chatgames.reload
+    permission-message: '&cNo permission to reload.'
+  chatgames top:
+    description: Show leaderboard
+    usage: /chatgames top
+    permission: chatgames.top
+    permission-message: '&cNo permission to view top.'
+  chatgames toggle:
+    description: Toggle game on or off
+    usage: /chatgames toggle
+    permission: chatgames.toggle
+    permission-message: '&cNo permission to toggle games.'
